@@ -9,7 +9,7 @@ class Subscriber:
     __broker_port = 1883
     __client = None
 
-    def __init__(self, ip, port='1883', topic="z"):
+    def __init__(self, ip, port='1883', topic=""):
         self.__broker_ip = ip
         self.__broker_port = port
         self.__client = mqtt.Client()

@@ -7,6 +7,8 @@ GAME_SET_END = 3
 
 # Game Class
 class Game:
+    __id = None
+
     __team_id = {"A": "", "B": ""}
     __team_score = {"A": 0, "B": 0}
     __team_set_score = {'A': 0, "B": 0}
@@ -14,6 +16,10 @@ class Game:
     __win_score = 5
     __win_set_score = 2
     __state = 0
+
+    @staticmethod
+    def set_id(id):
+        Game.__id = id
 
     @staticmethod
     def set_team_id(team, id):
@@ -55,6 +61,10 @@ class Game:
     @staticmethod
     def is_end() -> bool:
         return max(Game.__team_set_score.values()) >= Game.__win_set_score
+
+    @staticmethod
+    def get_id() -> str:
+        return Game.__id
 
     @staticmethod
     def get_winner() -> str:
